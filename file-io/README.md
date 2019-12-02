@@ -2,11 +2,11 @@
 ## Code snippet
 ```cpp
 // we don't want to put much code in a template method, thus we have this guy
-std::tuple<ifstream, uintmax_t, bool>
+std::tuple<std::ifstream, uintmax_t, bool>
 open_file(string_view path)
 {
-    ifstream file(path.data(), std::ios::binary);
-    if (!file) { return {ifstream(), uintmax_t(), false}; }
+    std::ifstream file(path.data(), std::ios::binary);
+    if (!file) { return {std::ifstream(), uintmax_t(), false}; }
 
     /*
      * Getting a file size. This could be alternatively done with
@@ -36,8 +36,8 @@ read_file(string_view path)
     using value_type = typename ContainerType::value_type;
     result.insert(
         begin(result),
-        istream_iterator<value_type>(file),
-        istream_iterator<value_type>());
+        std::istream_iterator<value_type>(file),
+        std::istream_iterator<value_type>());
     return result;
 }
 ```
