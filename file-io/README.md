@@ -8,11 +8,12 @@ open_file(string_view path)
     std::ifstream file(path.data(), std::ios::binary);
     if (!file) { return {std::ifstream(), uintmax_t(), false}; }
 
+    file.unsetf(std::ios::skipws); // don't skip eols, please
+    
     /*
      * Getting a file size. This could be alternatively done with
      * std::filesystem::file_size() call but, this will work too.
      */
-    file.unsetf(std::ios::skipws);
     file.seekg(0, std::ios::end);
     uintmax_t file_size = file.tellg();
     file.seekg(0, std::ios::beg);
