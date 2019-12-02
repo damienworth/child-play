@@ -4,7 +4,7 @@ Playing around with C++17 features and experimenting
 
 ## file-io
 
-I was wondering how would `std::filesystem` impact the size of binaries. So I created file-io folder here.
+I was wondering how would `std::filesystem` impact the size of binaries. So I created **file-io** folder here.
 To compile **file-io** without `std::filesystem` run the following commands:
 ```
 mkdir build && cd build
@@ -29,7 +29,10 @@ make file-io
 strip file-io/file-io
 size file-io/file-io # this should output size of different sections of a program
 ```
-The sizes I got on my machine with g++-8 on Ubuntu 18.04
+
+## Results
+
+The `size`s I got on my machine with g++-8 on Ubuntu 18.04
 **without** `std::filesystem`
 ```
 size file-io/file-io 
@@ -42,3 +45,4 @@ size file-io/file-io
    text	   data	    bss	    dec	    hex	filename
  136908	   1936	    568	 139412	  22094	file-io/file-io
 ```
+Conclusions are not implied here, so you may make them on your own.
