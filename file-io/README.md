@@ -49,13 +49,12 @@ int main()
     std::vector<uint8_t> v;
     constexpr char filename[] = "binary_hamster.bin";
     const auto container = read_file<decltype(v)>(filename);
-    if (container) {
-        v = std::move(*container);
-    } else {
+    if (!container) {
         std::cerr << "failed to read file " << filename << '\n';
-        return EXIT_FAILURE;
+        return EXIT_FAILURE;    
     }
 
+    v = std::move(*container);
     for (const auto& byte : v) {
         std::cout << std::hex << static_cast<uint16_t>(byte);
     }
