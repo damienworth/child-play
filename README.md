@@ -19,10 +19,7 @@ monster@hamster:~/child-play/build$ size file-io/file-io # this should output si
 ```
 Then, to compile **file-io** with `std::filesystem` run the following commands:
 ```console
-monster@hamster:~/child-play/build$ cmake -DWRITE_FILE=ON -DCMAKE_BUILD_TYPE=Release ..
-monster@hamster:~/child-play/build$ make file-io
-monster@hamster:~/child-play/build$ ./file-io/file-io # no output, since this one just writes a dummy binary file
-monster@hamster:~/child-play/build$ cmake -DWRITE_FILE=OFF -DWITH_FILESYSTEM=ON ..
+monster@hamster:~/child-play/build$ cmake -DWITH_FILESYSTEM=ON ..
 monster@hamster:~/child-play/build$ make file-io
 monster@hamster:~/child-play/build$ ./file-io/file-io # should output deadbeed
 monster@hamster:~/child-play/build$ strip file-io/file-io
