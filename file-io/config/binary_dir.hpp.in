@@ -1,0 +1,6 @@
+#ifndef BINARY_DIR_HPP
+#define BINARY_DIR_HPP
+
+#cmakedefine BINARY_DIR "@CMAKE_CURRENT_BINARY_DIR@/"
+
+#endif // BINARY_DIR_HPP
