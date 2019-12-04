@@ -43,6 +43,6 @@ size file-io/file-io
 ```
 Conclusions are not implied here, so you may make them on your own.
 
-Q: Why is version with `std::filesystem` is so big?
+Q: _Why daes `std::filesystem` bloats the binary size that much?_
 
-A: Well, because it's a static library.
+A: _Well, because it's a static library._
